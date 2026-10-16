@@ -94,8 +94,19 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 /* swim lane — a fish crossing the section */
 .swim-lane{position:absolute;top:16%;left:0;right:0;height:80px;overflow:hidden;z-index:1;pointer-events:none}
 .swim-lane--band{top:8%}
-.fish--swimmer{position:absolute;top:0;left:-90px;animation:swim 16s linear infinite}
-@keyframes swim{0%{transform:translateX(0) scaleX(1)}48%{transform:translateX(calc(100vw + 60px)) scaleX(1)}50%{transform:translateX(calc(100vw + 60px)) scaleX(-1)}98%{transform:translateX(0) scaleX(-1)}100%{transform:translateX(0) scaleX(1)}}
+.fish--swimmer{position:absolute;top:0;left:-130px;animation:swim 19s ease-in-out infinite}
+/* natural swim: faces travel direction (art faces left, so flip when moving right),
+   wavy vertical path + gentle body wobble instead of a straight line */
+@keyframes swim{
+  0%{transform:translateX(0) scaleX(-1) rotate(0deg)}
+  14%{transform:translateX(15vw) scaleX(-1) rotate(-8deg) translateY(-20px)}
+  28%{transform:translateX(30vw) scaleX(-1) rotate(7deg) translateY(12px)}
+  42%{transform:translateX(45vw) scaleX(-1) rotate(-7deg) translateY(-16px)}
+  56%{transform:translateX(60vw) scaleX(-1) rotate(8deg) translateY(14px)}
+  70%{transform:translateX(74vw) scaleX(-1) rotate(-6deg) translateY(-12px)}
+  84%{transform:translateX(88vw) scaleX(-1) rotate(6deg) translateY(8px)}
+  100%{transform:translateX(calc(100vw + 130px)) scaleX(-1) rotate(0deg) translateY(0)}
+}
 
 /* browser frame video card */
 .hero__media{position:relative}
@@ -167,13 +178,14 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .wx-body p{color:#5b534e;font-size:1.02rem;max-width:62ch;transition:color .35s}
 .wx-tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:var(--c-lime);border:2px solid var(--c-ink);border-radius:999px;padding:.18rem .75rem;margin-bottom:.5rem}
 .wx-by{color:var(--c-ink-soft);font-weight:600}
-.wx-fish{position:absolute;right:2.4rem;top:-52px;width:100px;height:auto;opacity:0;transform:translateY(30px) scale(.5) rotate(-12deg);transition:opacity .3s,transform .8s var(--ease);pointer-events:none;filter:drop-shadow(0 12px 10px rgba(37,30,33,.28))}
+.wx-icon{position:absolute;right:2.4rem;top:-56px;width:104px;height:104px;opacity:0;transform:translateY(30px) scale(.5) rotate(-12deg);transition:opacity .3s,transform .8s var(--ease);pointer-events:none;filter:drop-shadow(0 12px 10px rgba(37,30,33,.28))}
+.wx-icon svg{width:100%;height:100%;display:block}
 .wx-row:hover{background:var(--wx-fill);transform:translateY(-5px) rotate(-.6deg);z-index:2}
 .wx-row:hover .wx-num,.wx-row:hover .wx-body h3{color:#fff}
 .wx-row:hover .wx-body p{color:rgba(255,255,255,.93)}
-.wx-row:hover .wx-fish{opacity:1;transform:translateY(0) scale(1) rotate(8deg)}
+.wx-row:hover .wx-icon{opacity:1;transform:translateY(0) scale(1) rotate(8deg)}
 @media (hover:none){
-  .wx-fish{position:static;opacity:1;transform:none;width:64px;flex:none;margin-left:auto}
+  .wx-icon{position:static;opacity:1;transform:none;width:64px;height:64px;flex:none;margin-left:auto}
   .wx-row{padding:1.2rem 1.3rem}
 }
 @media (max-width:640px){
@@ -246,16 +258,29 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .ocean__rays{position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0 90px,rgba(185,227,249,.06) 90px 190px);animation:rays 14s linear infinite}
 @keyframes rays{to{transform:translateX(190px)}}
 .fish--ocean{filter:drop-shadow(0 4px 6px rgba(0,0,0,.3))}
-.o1{top:18%;animation:ocean1 22s linear infinite}
-.o2{top:52%;animation:ocean2 30s linear infinite}
-.o3{top:34%;animation:ocean3 26s linear infinite}
-.o4{top:66%;animation:ocean4 18s linear infinite}
-.o5{top:8%;animation:ocean5 34s linear infinite}
-@keyframes ocean1{0%{left:-120px;transform:scaleX(1)}48%{left:calc(100% + 20px);transform:scaleX(1)}50%{left:calc(100% + 20px);transform:scaleX(-1)}98%{left:-120px;transform:scaleX(-1)}100%{left:-120px;transform:scaleX(1)}}
-@keyframes ocean2{0%{left:calc(100% + 20px);transform:scaleX(-1)}48%{left:-120px;transform:scaleX(-1)}50%{left:-120px;transform:scaleX(1)}98%{left:calc(100% + 20px);transform:scaleX(1)}100%{left:calc(100% + 20px);transform:scaleX(-1)}}
-@keyframes ocean3{0%{left:-140px;transform:scaleX(1) translateY(0)}25%{transform:scaleX(1) translateY(-14px)}48%{left:calc(100% + 20px);transform:scaleX(1) translateY(0)}50%{left:calc(100% + 20px);transform:scaleX(-1)}98%{left:-140px;transform:scaleX(-1)}100%{left:-140px;transform:scaleX(1)}}
-@keyframes ocean4{0%{left:30%;transform:scaleX(1)}45%{left:calc(100% + 20px);transform:scaleX(1)}50%{left:calc(100% + 20px);transform:scaleX(-1)}95%{left:30%;transform:scaleX(-1)}100%{left:30%;transform:scaleX(1)}}
-@keyframes ocean5{0%{left:-120px;transform:scaleX(1)}48%{left:calc(100% + 20px);transform:scaleX(1)}50%{left:calc(100% + 20px);transform:scaleX(-1)}98%{left:-120px;transform:scaleX(-1)}100%{left:-120px;transform:scaleX(1)}}
+.o1{top:18%;animation:swimR 26s ease-in-out infinite}
+.o2{top:52%;animation:swimL 34s ease-in-out infinite}
+.o3{top:34%;animation:swimR 30s ease-in-out infinite;animation-delay:-9s}
+.o4{top:66%;animation:swimL 22s ease-in-out infinite;animation-delay:-6s}
+.o5{top:8%;animation:swimR 38s ease-in-out infinite;animation-delay:-17s}
+/* natural ocean swim: fish face their travel direction (art faces left),
+   drifting up and down with a soft body wobble */
+@keyframes swimR{
+  0%{left:-130px;transform:scaleX(-1) rotate(0deg)}
+  20%{transform:scaleX(-1) translateY(-22px) rotate(-7deg)}
+  40%{transform:scaleX(-1) translateY(14px) rotate(6deg)}
+  60%{transform:scaleX(-1) translateY(-18px) rotate(-6deg)}
+  80%{transform:scaleX(-1) translateY(12px) rotate(7deg)}
+  100%{left:calc(100% + 30px);transform:scaleX(-1) rotate(0deg)}
+}
+@keyframes swimL{
+  0%{left:calc(100% + 30px);transform:rotate(0deg)}
+  20%{transform:translateY(18px) rotate(7deg)}
+  40%{transform:translateY(-15px) rotate(-6deg)}
+  60%{transform:translateY(17px) rotate(6deg)}
+  80%{transform:translateY(-19px) rotate(-7deg)}
+  100%{left:-130px;transform:rotate(0deg)}
+}
 .bubble{position:absolute;bottom:-20px;border-radius:50%;border:2px solid rgba(185,227,249,.5);background:rgba(185,227,249,.12);animation:rise linear infinite}
 .b1{left:8%;width:14px;height:14px;animation-duration:7s}
 .b2{left:22%;width:9px;height:9px;animation-duration:5.5s;animation-delay:-2s}
