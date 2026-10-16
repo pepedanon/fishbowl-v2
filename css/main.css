@@ -84,8 +84,8 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .fish{position:absolute;z-index:1;pointer-events:none;filter:drop-shadow(0 6px 6px rgba(37,30,33,.18))}
 .floaty{animation:bob 5s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-16px) rotate(5deg)}}
-.fish--hero-1{top:6%;left:44%;width:120px;animation-duration:6s}
-.fish--hero-2{bottom:8%;left:4%;width:96px;animation-duration:7s;animation-delay:-2s}
+.fish--hero-1{top:11%;left:46%;width:120px;animation-duration:6s}
+.fish--hero-2{bottom:10%;left:auto;right:5%;width:96px;animation-duration:7s;animation-delay:-2s}
 .fish--frame{top:-34px;right:-24px;width:84px;z-index:3;animation-duration:4.5s}
 .fish--why{top:-46px;right:6%;width:110px}
 .fish--path{top:-38px;right:10%;width:90px}
@@ -178,14 +178,23 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .wx-body p{color:#5b534e;font-size:1.02rem;max-width:62ch;transition:color .35s}
 .wx-tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;background:var(--c-lime);border:2px solid var(--c-ink);border-radius:999px;padding:.18rem .75rem;margin-bottom:.5rem}
 .wx-by{color:var(--c-ink-soft);font-weight:600}
-.wx-icon{position:absolute;right:2.4rem;top:-56px;width:104px;height:104px;opacity:0;transform:translateY(30px) scale(.5) rotate(-12deg);transition:opacity .3s,transform .8s var(--ease);pointer-events:none;filter:drop-shadow(0 12px 10px rgba(37,30,33,.28))}
-.wx-icon svg{width:100%;height:100%;display:block}
+.wx-icons{position:absolute;right:1.4rem;top:-64px;display:flex;align-items:flex-end;pointer-events:none}
+.wx-i{width:76px;height:76px;filter:drop-shadow(0 10px 8px rgba(37,30,33,.25));opacity:0;transition:opacity .3s,transform .7s var(--ease)}
+.wx-i svg{width:100%;height:100%;display:block}
+.wx-i:nth-child(1){transform:translateY(30px) scale(.4) rotate(-16deg)}
+.wx-i:nth-child(2){margin-left:-16px;margin-bottom:12px;transform:translateY(30px) scale(.4);transition-delay:.09s}
+.wx-i:nth-child(3){margin-left:-16px;transform:translateY(30px) scale(.4) rotate(16deg);transition-delay:.18s}
 .wx-row:hover{background:var(--wx-fill);transform:translateY(-5px) rotate(-.6deg);z-index:2}
 .wx-row:hover .wx-num,.wx-row:hover .wx-body h3{color:#fff}
 .wx-row:hover .wx-body p{color:rgba(255,255,255,.93)}
-.wx-row:hover .wx-icon{opacity:1;transform:translateY(0) scale(1) rotate(8deg)}
+.wx-row:hover .wx-i{opacity:1}
+.wx-row:hover .wx-i:nth-child(1){transform:translateY(0) scale(1) rotate(-10deg)}
+.wx-row:hover .wx-i:nth-child(2){transform:translateY(-8px) scale(1)}
+.wx-row:hover .wx-i:nth-child(3){transform:translateY(0) scale(1) rotate(10deg)}
 @media (hover:none){
-  .wx-icon{position:static;opacity:1;transform:none;width:64px;height:64px;flex:none;margin-left:auto}
+  .wx-icons{position:static;margin-left:auto;flex:none;top:auto;right:auto}
+  .wx-i{width:44px;height:44px;opacity:1;transform:none;margin:0 0 0 -8px}
+  .wx-i:nth-child(2){margin-bottom:0}
   .wx-row{padding:1.2rem 1.3rem}
 }
 @media (max-width:640px){
