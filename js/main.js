@@ -125,28 +125,6 @@
     counters.forEach(countUp);
   }
 
-  /* ---------- scroll-driven 3D un-tilt (showcase cards) ---------- */
-  var tiltCards = document.querySelectorAll("[data-tilt]");
-  if (!reduceMotion && "IntersectionObserver" in window && window.innerWidth > 1020) {
-    function tilt() {
-      var vh = window.innerHeight;
-      tiltCards.forEach(function (card) {
-        var r = card.getBoundingClientRect();
-        var p = (vh * 0.92 - r.top) / (vh * 0.75);
-        p = Math.max(0, Math.min(1, p));
-        card.style.setProperty("--p", p.toFixed(3));
-      });
-    }
-    var tTick = false;
-    window.addEventListener("scroll", function () {
-      if (!tTick) { window.requestAnimationFrame(function () { tilt(); tTick = false; }); tTick = true; }
-    }, { passive: true });
-    window.addEventListener("resize", tilt);
-    tilt();
-  } else {
-    tiltCards.forEach(function (c) { c.style.setProperty("--p", 1); });
-  }
-
   /* ---------- FAQ single-open ---------- */
   var faq = document.querySelector("[data-faq]");
   if (faq) {
