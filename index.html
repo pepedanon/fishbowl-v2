@@ -37,43 +37,20 @@
       </button>
     </div>
   </div>
-  <nav id="mobile-menu" class="mnav" aria-label="Mobile" hidden>
-    <ul class="mnav__list">
-      <li><a class="mnav__link" href="#learn">Programs</a></li>
-      <li><a class="mnav__link" href="#where">Locations</a></li>
-      <li><a class="mnav__link" href="#faq">For Parents</a></li>
-      <li><a class="mnav__link" href="#paths">For Schools</a></li>
-      <li><a class="mnav__link" href="#what">About</a></li>
-      <li><a class="mnav__link" href="#contact">Contact</a></li>
-    </ul>
-    <p class="mnav__sub">More</p>
-    <ul class="mnav__list mnav__list--sub">
-      <li><a class="mnav__link" href="#students">Student Showcase</a></li>
-      <li><a class="mnav__link" href="#stats">Impact</a></li>
-      <li><a class="mnav__link" href="#where">Events</a></li>
-      <li><a class="mnav__link" href="#press">Press</a></li>
-      <li><a class="mnav__link" href="#what">Our Team</a></li>
-    </ul>
-    <a class="btn btn--pink mnav__cta" href="#paths"><span class="btn__label">Donate</span><span class="btn__arrow" aria-hidden="true">→</span></a>
 </header>
 <nav id="mobile-menu" class="mnav" aria-label="Mobile" hidden>
+  <button class="mnav__close" aria-label="Close menu"><span></span><span></span></button>
   <ul class="mnav__list">
-    <li><a class="mnav__link" href="#learn">Programs</a></li>
-    <li><a class="mnav__link" href="#where">Locations</a></li>
-    <li><a class="mnav__link" href="#faq">For Parents</a></li>
-    <li><a class="mnav__link" href="#paths">For Schools</a></li>
+    <li><a class="mnav__link" href="#top">Home</a></li>
     <li><a class="mnav__link" href="#what">About</a></li>
-    <li><a class="mnav__link" href="#contact">Contact</a></li>
+    <li><a class="mnav__link" href="#contact">Donate</a></li>
+    <li><a class="mnav__link" href="#paths">Join</a></li>
+    <li><a class="mnav__link" href="#students">Gallery</a></li>
+    <li><a class="mnav__link" href="#social">Social App</a></li>
+    <li><a class="mnav__link" href="#what">Team</a></li>
+    <li><a class="mnav__link" href="#contact">Contact Us</a></li>
   </ul>
-  <p class="mnav__sub">More</p>
-  <ul class="mnav__list mnav__list--sub">
-    <li><a class="mnav__link" href="#students">Student Showcase</a></li>
-    <li><a class="mnav__link" href="#stats">Impact</a></li>
-    <li><a class="mnav__link" href="#where">Events</a></li>
-    <li><a class="mnav__link" href="#press">Press</a></li>
-    <li><a class="mnav__link" href="#what">Our Team</a></li>
-  </ul>
-  <a class="btn btn--pink mnav__cta" href="#paths"><span class="btn__label">Donate</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+  <a class="btn btn--pink mnav__cta" href="#contact"><span class="btn__label">Donate</span><span class="btn__arrow" aria-hidden="true">→</span></a>
 </nav>
 
 <main id="main">
@@ -188,9 +165,9 @@
     <h2 id="stats-h" class="h2 h2--light reveal">The past two years alone</h2>
     <ul class="stats">
       <li class="stat reveal"><span class="stat__num" data-count="1000" data-suffix="+">0</span><span class="stat__label">kids supported in the past two years</span></li>
-      <li class="stat reveal"><span class="stat__num" data-count="9" data-suffix="">0</span><span class="stat__label">program locations — schools &amp; community hubs</span></li>
+      <li class="stat reveal"><span class="stat__num" data-count="19" data-suffix="">0</span><span class="stat__label">program locations — schools &amp; community hubs</span></li>
       <li class="stat reveal"><span class="stat__num" data-count="2" data-suffix="">0</span><span class="stat__label">district partners — and growing</span></li>
-      <li class="stat reveal"><span class="stat__num" data-count="55" data-suffix="">0</span><span class="stat__label">community events — markets, fairs &amp; showcases</span></li>
+      <li class="stat reveal"><span class="stat__num" data-count="147" data-suffix="">0</span><span class="stat__label">community events — markets, fairs &amp; showcases</span></li>
     </ul>
     <p class="band__cta reveal"><a class="text-link text-link--light" href="#contact">See our full 2025 impact recap →</a></p>
   </div>
@@ -283,13 +260,33 @@
 <!-- ============ PRESS ============ -->
 <section class="band band--cream2 band--tight" id="press" aria-labelledby="press-h">
   <div class="wrap">
-    <p class="eyebrow reveal">In the news</p>
-    <h2 id="press-h" class="h2 reveal">Press &amp; recognition</h2>
-    <ul class="press">
-      <li class="press-card reveal"><span class="press-card__kicker">Featured</span><h3>FishBowl students interviewed in Valley News</h3><p>A local feature on FishBowl&rsquo;s young entrepreneurs and the program behind them.</p></li>
-      <li class="press-card reveal"><span class="press-card__kicker">Announcement</span><h3>New classes in business, marketing &amp; public speaking</h3><p>Our class-launch announcement, carried by CBS, FOX, and Concho Valley affiliate sites.</p></li>
+    <p class="eyebrow reveal">In the press</p>
+    <h2 id="press-h" class="h2 reveal">FishBowl in the news</h2>
+    <ul class="press-grid">
+      <li class="press-card reveal">
+        <span class="press-outlet press-outlet--valley">Valley News</span>
+        <h3>Young entrepreneurs showcased at Concerts in the Park</h3>
+        <p>FishBowl students interviewed about their businesses and the program behind them.</p>
+      </li>
+      <li class="press-card reveal">
+        <span class="press-outlet press-outlet--cbs">CBS</span>
+        <h3>FishBowl Youth empowers young entrepreneurs with new classes</h3>
+        <p>New classes in business management, marketing &amp; public speaking.</p>
+        <a class="press-btn" href="https://www.cbs42.com/business/press-releases/accesswire/789676/fishbowl-youth-empowers-young-entrepreneurs-with-new-classes-in-business-management-marketing-public-speaking/" target="_blank" rel="noopener">Read article <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="press-card reveal">
+        <span class="press-outlet press-outlet--fox">FOX News</span>
+        <h3>FishBowl Youth empowers young entrepreneurs with new classes</h3>
+        <p>New classes in business management, marketing &amp; public speaking.</p>
+        <a class="press-btn" href="https://fox40.com/business/press-releases/accesswire/789676/fishbowl-youth-empowers-young-entrepreneurs-with-new-classes-in-business-management-marketing-public-speaking/" target="_blank" rel="noopener">Read article <span aria-hidden="true">&rarr;</span></a>
+      </li>
+      <li class="press-card reveal">
+        <span class="press-outlet press-outlet--concho">Concho Valley</span>
+        <h3>FishBowl Youth empowers young entrepreneurs with new classes</h3>
+        <p>New classes in business management, marketing &amp; public speaking.</p>
+        <a class="press-btn" href="https://www.conchovalleyhomepage.com/business/press-releases/accesswire/789676/fishbowl-youth-empowers-young-entrepreneurs-with-new-classes-in-business-management-marketing-public-speaking/" target="_blank" rel="noopener">Read article <span aria-hidden="true">&rarr;</span></a>
+      </li>
     </ul>
-    <p class="band__cta reveal"><a class="text-link" href="#contact">See all press &amp; news →</a></p>
   </div>
 </section>
 
@@ -322,7 +319,7 @@
     </div>
     <p class="band__cta reveal"><a class="text-link" href="#contact">See all parent FAQs →</a></p>
     <aside class="fund-note reveal">
-      <span class="fish floaty fi fi-orange" aria-hidden="true" style="width:72px"></span>
+      <span class="fish floaty fi fi-pink" aria-hidden="true" style="width:72px"></span>
       <div><h3>No student turned away</h3><p>Thanks to FishBowl Fund — our registered 501(c)(3) — scholarships and supply grants keep the program open to every family, and mentors support students with IEPs and diverse learning styles. <a href="#contact">How FishBowl and FishBowl Fund work together →</a></p></div>
     </aside>
   </div>
@@ -335,8 +332,8 @@
     <h2 id="contact-h" class="h2 h2--light reveal">Every big idea starts small</h2>
     <p class="cta-band__copy reveal">Find a class for your child, bring FishBowl to your school, or fund a young entrepreneur&rsquo;s first big step.</p>
     <div class="contact-row reveal">
-      <a class="contact-chip" href="mailto:info@fishbowlhub.org" data-track="email-click"><span aria-hidden="true">✉</span>info@fishbowlhub.org</a>
-      <a class="contact-chip" href="tel:+18182396685" data-track="phone-click"><span aria-hidden="true">☎</span>+1 (818) 239-6685</a>
+      <a class="contact-chip contact-chip--pink" href="mailto:info@fishbowlhub.org" data-track="email-click"><span aria-hidden="true">✉</span>info@fishbowlhub.org</a>
+      <a class="contact-chip contact-chip--orange" href="tel:+18182396685" data-track="phone-click"><span aria-hidden="true">☎</span>+1 (818) 239-6685</a>
       <a class="btn btn--lime btn--magnet" href="https://wa.me/18182396685" target="_blank" rel="noopener" data-track="contact-whatsapp"><span class="btn__label">Message us on WhatsApp</span><span class="btn__arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
@@ -358,6 +355,11 @@
     <div class="footer__brand">
       <span class="brand__badge brand__badge--sm"><span class="fi fi-logo" role="img" aria-label="FishBowl Youth Entrepreneurs logo"></span></span>
       <p>FishBowl Youth Entrepreneurship is a registered 501(c)(3) nonprofit sparking creativity, confidence, and real-world skills in kids and teens across California.</p>
+      <div class="socials" id="social">
+        <a class="social-btn" href="https://www.instagram.com/fishbowlyouth" target="_blank" rel="noopener" aria-label="FishBowl on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.4" fill="currentColor"/></svg></a>
+        <a class="social-btn" href="https://www.tiktok.com/@fishbowlyouth" target="_blank" rel="noopener" aria-label="FishBowl on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.5a3.75 3.75 0 1 1-3.75-3.75" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 4c.6 2.6 2.2 4.2 4.8 4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+        <a class="social-btn" href="https://www.youtube.com/channel/UC4-Ss4qXp_0m8CGfS4QS4rg" target="_blank" rel="noopener" aria-label="FishBowl on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 9.8v4.4L14.8 12l-4.3-2.2Z" fill="currentColor"/></svg></a>
+      </div>
     </div>
     <nav aria-label="Programs footer"><h3>Programs</h3><ul><li><a href="#learn">Curriculum</a></li><li><a href="#where">Locations</a></li><li><a href="#students">Student Showcase</a></li><li><a href="#stats">Impact</a></li></ul></nav>
     <nav aria-label="Get involved footer"><h3>Get involved</h3><ul><li><a href="#faq">For Parents</a></li><li><a href="#paths">For Schools</a></li><li><a href="#paths">Donate</a></li><li><a href="#press">Press</a></li></ul></nav>
