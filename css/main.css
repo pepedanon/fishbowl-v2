@@ -86,9 +86,9 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-16px) rotate(5deg)}}
 .fish--hero-1{top:11%;left:46%;width:120px;animation-duration:6s}
 .fish--hero-2{bottom:10%;left:auto;right:5%;width:96px;animation-duration:7s;animation-delay:-2s}
-.fish--frame{top:-12px;right:-24px;width:84px;z-index:3;animation-duration:4.5s}
-.fish--why{top:-14px;right:6%;width:110px}
-.fish--path{top:-12px;right:10%;width:90px}
+.fish--frame{top:10px;right:10px;width:84px;z-index:3;animation-duration:4.5s}
+.fish--why{top:12px;right:5%;width:110px}
+.fish--path{top:12px;right:8%;width:90px}
 .fish--cta{top:10px;left:8%;width:100px}
 
 /* swim lane — a fish crossing the section */
@@ -329,6 +329,7 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .credit__mark{width:22px;height:22px;display:inline-block;vertical-align:-4px}
 
 /* ---------- responsive ---------- */
+.sticky-donate{display:none}
 @media (max-width:1020px){
   .site-nav{display:none}
   .menu-btn{display:flex}
@@ -352,22 +353,25 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
   .stats{grid-template-columns:1fr 1fr;gap:1rem}
   .stat{padding:1.2rem .8rem}
   .header__actions .btn{display:none}
-  .mnav{display:block;position:fixed;top:0;left:0;width:100%;height:100vh;height:100dvh;z-index:300;background:rgba(37,30,33,.8);opacity:0;pointer-events:none;transition:opacity .25s;overflow-y:auto}
+  .mnav{display:flex;flex-direction:column;position:fixed;top:0;left:0;width:100%;height:100vh;height:100dvh;z-index:300;background:var(--c-cream);opacity:0;pointer-events:none;transition:opacity .25s;overflow:hidden}
   .mnav:not([hidden]){opacity:1;pointer-events:auto}
-  .mnav__panel,.mnav > ul:first-of-type{margin:0}
-  .mnav__list{list-style:none;background:var(--c-cream);border:2.5px solid var(--c-ink);border-radius:20px;box-shadow:var(--shadow);margin:4.6rem 1.2rem 0;padding:1.2rem;display:grid;gap:.4rem;transform:translateY(-12px);transition:transform .35s var(--ease)}
+  .mnav__list{list-style:none;flex:1;overflow-y:auto;margin:0;padding:5.2rem 1.4rem 1.4rem;display:grid;gap:.2rem;align-content:start;transform:translateY(-12px);transition:transform .35s var(--ease)}
   .mnav:not([hidden]) .mnav__list{transform:none}
+  .mnav__foot{margin:0;padding:1rem 1.2rem calc(1.1rem + env(safe-area-inset-bottom));background:var(--c-cream);border-top:2.5px solid var(--c-ink)}
+  .mnav__foot .btn{width:100%;justify-content:center;font-size:1.15rem;padding:1rem}
   .mnav__link{display:block;font-family:var(--font-display);font-size:1.25rem;padding:.55rem .8rem;border-radius:12px;text-decoration:none}
   .mnav__link:hover{background:var(--c-lime)}
   .mnav__sub{margin:1.1rem 2rem .2rem;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5)}
   .mnav__list--sub{margin-top:.6rem;margin-bottom:1rem}
-  .mnav__cta{margin:0 1.2rem 2rem;display:inline-flex}
   .fish--hero-1{width:84px;left:auto;right:4%;top:2%}
   .fish--hero-2{display:none}
   .sticker-tag{font-size:.8rem}
   .fund-note{flex-direction:column}
   .footer__grid{grid-template-columns:1fr}
   .footer__bottom{flex-direction:column;align-items:flex-start}
+  .sticky-donate{display:block;position:fixed;left:0;right:0;bottom:0;z-index:180;padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));background:rgba(255,246,233,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:2.5px solid var(--c-ink)}
+  .sticky-donate .btn{width:100%;justify-content:center;font-size:1.05rem;padding:.85rem}
+  body{padding-bottom:76px}
 }
 
 /* ---------- reduced motion ---------- */
