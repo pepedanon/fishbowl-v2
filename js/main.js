@@ -33,6 +33,8 @@
       menu.hidden = open;
       document.body.style.overflow = open ? "" : "hidden";
     });
+    var closeBtn = menu.querySelector(".mnav__close");
+    if (closeBtn) closeBtn.addEventListener("click", function () { menuBtn.click(); });
     menu.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
         menu.hidden = true;
