@@ -81,7 +81,7 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .hero__proof strong{color:var(--c-ink)}
 
 /* floating fish */
-.fish{position:absolute;z-index:1;pointer-events:none;filter:drop-shadow(0 6px 6px rgba(37,30,33,.18))}
+.fish{position:absolute;z-index:1;pointer-events:none;filter:none}
 .floaty{animation:bob 5s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-16px) rotate(5deg)}}
 .fish--hero-1{top:11%;left:46%;width:120px;animation-duration:6s}
@@ -95,17 +95,17 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .swim-lane{position:absolute;top:16%;left:0;right:0;height:80px;overflow:hidden;z-index:1;pointer-events:none}
 .swim-lane--band{top:8%}
 .fish--swimmer{position:absolute;top:0;left:-130px;animation:swim 19s ease-in-out infinite}
-/* natural swim: faces travel direction (art faces left, so flip when moving right),
-   wavy vertical path + gentle body wobble instead of a straight line */
+/* All cleaned fish artwork faces right. This lane also travels right, so the
+   fish stays unmirrored and always leads with its face. */
 @keyframes swim{
-  0%{transform:translateX(0) scaleX(-1) rotate(0deg)}
-  14%{transform:translateX(15vw) scaleX(-1) rotate(-8deg) translateY(-20px)}
-  28%{transform:translateX(30vw) scaleX(-1) rotate(7deg) translateY(12px)}
-  42%{transform:translateX(45vw) scaleX(-1) rotate(-7deg) translateY(-16px)}
-  56%{transform:translateX(60vw) scaleX(-1) rotate(8deg) translateY(14px)}
-  70%{transform:translateX(74vw) scaleX(-1) rotate(-6deg) translateY(-12px)}
-  84%{transform:translateX(88vw) scaleX(-1) rotate(6deg) translateY(8px)}
-  100%{transform:translateX(calc(100vw + 130px)) scaleX(-1) rotate(0deg) translateY(0)}
+  0%{transform:translateX(0) rotate(0deg)}
+  14%{transform:translateX(15vw) rotate(-8deg) translateY(-20px)}
+  28%{transform:translateX(30vw) rotate(7deg) translateY(12px)}
+  42%{transform:translateX(45vw) rotate(-7deg) translateY(-16px)}
+  56%{transform:translateX(60vw) rotate(8deg) translateY(14px)}
+  70%{transform:translateX(74vw) rotate(-6deg) translateY(-12px)}
+  84%{transform:translateX(88vw) rotate(6deg) translateY(8px)}
+  100%{transform:translateX(calc(100vw + 130px)) rotate(0deg) translateY(0)}
 }
 
 /* browser frame video card */
@@ -279,29 +279,29 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .ocean{position:relative;height:15rem;background:linear-gradient(180deg,var(--c-sea) 0%,var(--c-sea-deep 78%));overflow:hidden;border-bottom:2px solid rgba(255,255,255,.14)}
 .ocean__rays{position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0 90px,rgba(185,227,249,.06) 90px 190px);animation:rays 14s linear infinite}
 @keyframes rays{to{transform:translateX(190px)}}
-.fish--ocean{filter:drop-shadow(0 4px 6px rgba(0,0,0,.3))}
+.fish--ocean{filter:none}
 .o1{top:18%;animation:swimR 26s ease-in-out infinite}
 .o2{top:52%;animation:swimL 34s ease-in-out infinite}
 .o3{top:34%;animation:swimR 30s ease-in-out infinite;animation-delay:-9s}
 .o4{top:66%;animation:swimL 22s ease-in-out infinite;animation-delay:-6s}
 .o5{top:8%;animation:swimR 38s ease-in-out infinite;animation-delay:-17s}
-/* natural ocean swim: fish face their travel direction (art faces left),
-   drifting up and down with a soft body wobble */
+/* Cleaned artwork faces right. Right-moving fish stay unmirrored; left-moving
+   fish are mirrored once so every fish leads with its face. */
 @keyframes swimR{
-  0%{left:-130px;transform:scaleX(-1) rotate(0deg)}
-  20%{transform:scaleX(-1) translateY(-22px) rotate(-7deg)}
-  40%{transform:scaleX(-1) translateY(14px) rotate(6deg)}
-  60%{transform:scaleX(-1) translateY(-18px) rotate(-6deg)}
-  80%{transform:scaleX(-1) translateY(12px) rotate(7deg)}
-  100%{left:calc(100% + 30px);transform:scaleX(-1) rotate(0deg)}
+  0%{left:-130px;transform:rotate(0deg)}
+  20%{transform:translateY(-22px) rotate(-7deg)}
+  40%{transform:translateY(14px) rotate(6deg)}
+  60%{transform:translateY(-18px) rotate(-6deg)}
+  80%{transform:translateY(12px) rotate(7deg)}
+  100%{left:calc(100% + 30px);transform:rotate(0deg)}
 }
 @keyframes swimL{
-  0%{left:calc(100% + 30px);transform:rotate(0deg)}
-  20%{transform:translateY(18px) rotate(7deg)}
-  40%{transform:translateY(-15px) rotate(-6deg)}
-  60%{transform:translateY(17px) rotate(6deg)}
-  80%{transform:translateY(-19px) rotate(-7deg)}
-  100%{left:-130px;transform:rotate(0deg)}
+  0%{left:calc(100% + 30px);transform:scaleX(-1) rotate(0deg)}
+  20%{transform:scaleX(-1) translateY(18px) rotate(7deg)}
+  40%{transform:scaleX(-1) translateY(-15px) rotate(-6deg)}
+  60%{transform:scaleX(-1) translateY(17px) rotate(6deg)}
+  80%{transform:scaleX(-1) translateY(-19px) rotate(-7deg)}
+  100%{left:-130px;transform:scaleX(-1) rotate(0deg)}
 }
 .bubble{position:absolute;bottom:-20px;border-radius:50%;border:2px solid rgba(185,227,249,.5);background:rgba(185,227,249,.12);animation:rise linear infinite}
 .b1{left:8%;width:14px;height:14px;animation-duration:7s}
