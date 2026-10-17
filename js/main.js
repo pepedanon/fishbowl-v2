@@ -159,7 +159,6 @@
         var playPromise = heroVideo.play();
         if (playPromise && typeof playPromise.catch === "function") {
           playPromise.catch(function () {
-            heroVideo.muted = true;
             syncSoundButton();
           });
         }
