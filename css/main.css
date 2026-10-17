@@ -92,9 +92,9 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .fish--cta{top:10px;left:8%;width:100px}
 
 /* swim lane — a fish crossing the section */
-.swim-lane{position:absolute;top:16%;left:0;right:0;height:80px;overflow:hidden;z-index:1;pointer-events:none}
+.swim-lane{position:absolute;top:16%;left:0;right:0;height:120px;overflow:hidden;z-index:1;pointer-events:none}
 .swim-lane--band{top:8%}
-.fish--swimmer{position:absolute;top:0;left:-130px;animation:swim 19s ease-in-out infinite}
+.fish--swimmer{position:absolute;top:32px;left:-130px;animation:swim 19s ease-in-out infinite}
 /* All cleaned fish artwork faces right. This lane also travels right, so the
    fish stays unmirrored and always leads with its face. */
 @keyframes swim{
@@ -120,6 +120,11 @@ h1,h2,h3,.h2{font-family:var(--font-display);font-weight:400;line-height:1.08;le
 .browser-frame__url{font-weight:700;font-size:.9rem;background:#fff;border:2px solid var(--c-ink);border-radius:999px;padding:.15rem .9rem}
 .browser-frame__screen{position:relative;aspect-ratio:16/9;background:var(--c-ink);border-radius:0 0 19px 19px;overflow:hidden}
 .browser-frame__screen video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video-sound{position:absolute;right:1rem;bottom:1rem;z-index:4;display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .8rem;border:2px solid var(--c-ink);border-radius:999px;background:rgba(255,255,255,.94);color:var(--c-ink);box-shadow:3px 3px 0 var(--c-ink);font:inherit;font-size:.82rem;font-weight:800;line-height:1;cursor:pointer;transition:transform .2s var(--ease),background .2s ease}
+.video-sound:hover{transform:translateY(-2px)}
+.video-sound:focus-visible{outline:3px solid var(--c-orange);outline-offset:3px}
+.video-sound[aria-pressed="true"]{background:var(--c-lime)}
+.video-sound__icon{font-size:1rem;line-height:1}
 .sticker-tag{position:absolute;left:1.2rem;bottom:-1.1rem;background:var(--c-pink);color:#fff;font-family:var(--font-display);font-size:.95rem;padding:.45rem 1.1rem;border-radius:999px;border:2px solid var(--c-ink);box-shadow:var(--shadow-sm);transform:rotate(-3deg);z-index:3}
 .starburst{position:absolute;z-index:1;pointer-events:none}
 .starburst--hero{right:-2.2rem;bottom:-2.4rem;font-size:4.2rem;color:var(--c-orange)}

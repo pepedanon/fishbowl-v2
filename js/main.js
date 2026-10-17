@@ -139,6 +139,37 @@
     });
   }
 
+  /* ---------- hero video sound toggle ---------- */
+  var heroVideo = document.querySelector(".browser-frame__screen video");
+  var soundButton = document.querySelector("[data-video-sound]");
+  if (heroVideo && soundButton) {
+    var soundIcon = soundButton.querySelector(".video-sound__icon");
+    var soundLabel = soundButton.querySelector(".video-sound__label");
+    function syncSoundButton() {
+      var soundIsOn = !heroVideo.muted && heroVideo.volume > 0;
+      soundButton.setAttribute("aria-pressed", String(soundIsOn));
+      soundButton.setAttribute("aria-label", soundIsOn ? "Mute video" : "Turn video sound on");
+      soundIcon.textContent = soundIsOn ? "🔊" : "🔇";
+      soundLabel.textContent = soundIsOn ? "Mute" : "Sound on";
+    }
+    soundButton.addEventListener("click", function () {
+      heroVideo.muted = !heroVideo.muted;
+      if (!heroVideo.muted) {
+        heroVideo.volume = 1;
+        var playPromise = heroVideo.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(function () {
+            heroVideo.muted = true;
+            syncSoundButton();
+          });
+        }
+      }
+      syncSoundButton();
+    });
+    heroVideo.addEventListener("volumechange", syncSoundButton);
+    syncSoundButton();
+  }
+
   /* ---------- analytics hooks (data-track) ---------- */
   document.addEventListener("click", function (e) {
     var el = e.target.closest("[data-track]");
